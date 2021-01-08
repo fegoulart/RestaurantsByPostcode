@@ -20,7 +20,7 @@
 		6C08B4BE25A7EE6C0021A6C0 /* Formatter+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C08B4BD25A7EE6C0021A6C0 /* Formatter+Utils.swift */; };
 		6C08B4C225A7F2D90021A6C0 /* RestaurantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C08B4C025A7F2D90021A6C0 /* RestaurantsTableViewCell.swift */; };
 		6C08B4C325A7F2D90021A6C0 /* RestaurantsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C08B4C125A7F2D90021A6C0 /* RestaurantsTableViewCell.xib */; };
-		6C08B4C525A7F59C0021A6C0 /* Restaurants.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C08B4C425A7F59C0021A6C0 /* Restaurants.json */; };
+		6C43E39225A7FA8300BF1D42 /* Restaurants.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C43E39125A7FA8300BF1D42 /* Restaurants.json */; };
 		A72619102FA5035A5C4A0A6F /* libPods-RestaurantsByPostcodeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 472B46CFF5EB3DBA359D2CFE /* libPods-RestaurantsByPostcodeUITests.a */; };
 		AF365F63582735AAF637DEED /* Pods_RestaurantsByPostcodeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABD123B3EE2C2FE36945639 /* Pods_RestaurantsByPostcodeTests.framework */; };
 		E0D28FB49E2A5B7AAA32654D /* Pods_RestaurantsByPostcode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483958695E4C1E63ED89CFF8 /* Pods_RestaurantsByPostcode.framework */; };
@@ -68,7 +68,7 @@
 		6C08B4BD25A7EE6C0021A6C0 /* Formatter+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Utils.swift"; sourceTree = "<group>"; };
 		6C08B4C025A7F2D90021A6C0 /* RestaurantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsTableViewCell.swift; sourceTree = "<group>"; };
 		6C08B4C125A7F2D90021A6C0 /* RestaurantsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantsTableViewCell.xib; sourceTree = "<group>"; };
-		6C08B4C425A7F59C0021A6C0 /* Restaurants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Restaurants.json; sourceTree = "<group>"; };
+		6C43E39125A7FA8300BF1D42 /* Restaurants.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Restaurants.json; sourceTree = "<group>"; };
 		92B1B6D38E1A1D8E23CA681C /* Pods-RestaurantsByPostcode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestaurantsByPostcode.release.xcconfig"; path = "Target Support Files/Pods-RestaurantsByPostcode/Pods-RestaurantsByPostcode.release.xcconfig"; sourceTree = "<group>"; };
 		C352B445E9741DD6EBEE684E /* Pods-RestaurantsByPostcode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestaurantsByPostcode.debug.xcconfig"; path = "Target Support Files/Pods-RestaurantsByPostcode/Pods-RestaurantsByPostcode.debug.xcconfig"; sourceTree = "<group>"; };
 		E68122DC6D51453F94C376FC /* Pods-RestaurantsByPostcodeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestaurantsByPostcodeUITests.debug.xcconfig"; path = "Target Support Files/Pods-RestaurantsByPostcodeUITests/Pods-RestaurantsByPostcodeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -260,7 +260,7 @@
 		6C08B4B625A7ED4B0021A6C0 /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
-				6C08B4C425A7F59C0021A6C0 /* Restaurants.json */,
+				6C43E39125A7FA8300BF1D42 /* Restaurants.json */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -384,7 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C08B4C325A7F2D90021A6C0 /* RestaurantsTableViewCell.xib in Resources */,
-				6C08B4C525A7F59C0021A6C0 /* Restaurants.json in Resources */,
+				6C43E39225A7FA8300BF1D42 /* Restaurants.json in Resources */,
 				6C08B48925A7EA480021A6C0 /* LaunchScreen.storyboard in Resources */,
 				6C08B48625A7EA480021A6C0 /* Assets.xcassets in Resources */,
 				6C08B48425A7EA460021A6C0 /* Main.storyboard in Resources */,
