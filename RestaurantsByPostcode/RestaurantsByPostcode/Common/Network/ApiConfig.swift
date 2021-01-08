@@ -8,9 +8,9 @@
 
 struct APIConfig {
 
-    static let baseUrl = "https://uk.api.just-eat.io/"
+    static let baseUrl = "https://uk.api.just-eat.io:443/"
     
     static func getBaseUrl() -> String {
-        return "\(baseUrl)restaurants/bypostcode/"
+        return "\(baseUrl)restaurants/"
     }
 }

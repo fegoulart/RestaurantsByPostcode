@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Restaurants Listing View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RestaurantsByPostcode" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RestaurantsListingViewController" customModule="RestaurantsByPostcode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nah-hN-oxW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -24,8 +24,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="siH-tU-1o8">
                                 <rect key="frame" x="222" y="96" width="48" height="30"/>
                                 <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="SearchButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ggR-0P-ym7"/>
+                                </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nav-LS-nvm">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" estimatedRowHeight="105" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nav-LS-nvm">
                                 <rect key="frame" x="0.0" y="178" width="320" height="390"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
@@ -45,6 +48,11 @@
                         <viewLayoutGuide key="safeArea" id="1BV-R5-56a"/>
                     </view>
                     <navigationItem key="navigationItem" id="iKg-7U-gW6"/>
+                    <connections>
+                        <outlet property="postCodeTextField" destination="VEL-Yd-PBf" id="AgW-kb-Uhx"/>
+                        <outlet property="restaurantsTableView" destination="Nav-LS-nvm" id="GO6-oB-dXR"/>
+                        <outlet property="searchRestaurantsButton" destination="siH-tU-1o8" id="upg-KO-6ru"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
