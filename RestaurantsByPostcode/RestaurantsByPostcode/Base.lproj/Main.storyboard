@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9dr-XK-vtv">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RestaurantsByPostcode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nah-hN-oxW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Postcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VEL-Yd-PBf">
+                                <rect key="frame" x="50" y="94" width="147" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="siH-tU-1o8">
+                                <rect key="frame" x="222" y="96" width="48" height="30"/>
+                                <state key="normal" title="Search"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nav-LS-nvm">
+                                <rect key="frame" x="0.0" y="178" width="320" height="390"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1BV-R5-56a" firstAttribute="trailing" secondItem="siH-tU-1o8" secondAttribute="trailing" constant="50" id="36V-bt-2oH"/>
+                            <constraint firstItem="siH-tU-1o8" firstAttribute="leading" secondItem="VEL-Yd-PBf" secondAttribute="trailing" constant="25" id="87G-2g-JDS"/>
+                            <constraint firstItem="1BV-R5-56a" firstAttribute="bottom" secondItem="Nav-LS-nvm" secondAttribute="bottom" id="H62-dy-3Fv"/>
+                            <constraint firstItem="Nav-LS-nvm" firstAttribute="leading" secondItem="1BV-R5-56a" secondAttribute="leading" id="LnH-9N-Nba"/>
+                            <constraint firstItem="VEL-Yd-PBf" firstAttribute="top" secondItem="1BV-R5-56a" secondAttribute="top" constant="50" id="N3q-Bb-kxQ"/>
+                            <constraint firstItem="siH-tU-1o8" firstAttribute="centerY" secondItem="VEL-Yd-PBf" secondAttribute="centerY" id="QSl-YA-06g"/>
+                            <constraint firstItem="1BV-R5-56a" firstAttribute="trailing" secondItem="Nav-LS-nvm" secondAttribute="trailing" id="dBW-DT-9AK"/>
+                            <constraint firstItem="Nav-LS-nvm" firstAttribute="top" secondItem="VEL-Yd-PBf" secondAttribute="bottom" constant="50" id="pwy-59-tYq"/>
+                            <constraint firstItem="VEL-Yd-PBf" firstAttribute="leading" secondItem="1BV-R5-56a" secondAttribute="leading" constant="50" id="sa1-4W-I9d"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1BV-R5-56a"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iKg-7U-gW6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1074.375" y="137.32394366197184"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QBD-2O-4nq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9dr-XK-vtv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4cS-Ua-3kb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="07R-7U-ynD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9bf-Od-ajO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+</document>

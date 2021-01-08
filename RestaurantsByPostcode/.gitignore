@@ -1,6 +1,14 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/reactnative,macos,swift,xcode,webstorm
-# Edit at https://www.toptal.com/developers/gitignore?templates=reactnative,macos,swift,xcode,webstorm
+# Created by https://www.toptal.com/developers/gitignore/api/xcode,webstorm,cocoapods,swift,reactnative,macos
+# Edit at https://www.toptal.com/developers/gitignore?templates=xcode,webstorm,cocoapods,swift,reactnative,macos
+
+### CocoaPods ###
+## CocoaPods GitIgnore Template
+
+# CocoaPods - Only use to conserve bandwidth / Save time on Pushing
+#           - Also handy if you have a large number of dependant pods
+#           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGNORE THE LOCK FILE
+Pods/
 
 ### macOS ###
 # General
@@ -489,4 +497,4 @@ fabric.properties
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-# End of https://www.toptal.com/developers/gitignore/api/reactnative,macos,swift,xcode,webstorm
+# End of https://www.toptal.com/developers/gitignore/api/xcode,webstorm,cocoapods,swift,reactnative,macos

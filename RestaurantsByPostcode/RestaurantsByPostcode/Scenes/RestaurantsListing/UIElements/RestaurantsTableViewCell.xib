@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="105" id="KGk-i7-Jjw" customClass="RestaurantsTableViewCell" customModule="RestaurantsByPostcode" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pjl-S8-Dta">
+                        <rect key="frame" x="66" y="10" width="254" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0f-0H-rmP">
+                        <rect key="frame" x="74" y="64" width="54" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cuisine:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80U-Un-b5d">
+                        <rect key="frame" x="74" y="35" width="61" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.56" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5q9-Ri-6lm">
+                        <rect key="frame" x="139" y="64" width="35" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUl-2m-f9X">
+                        <rect key="frame" x="143" y="35" width="177" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="WJE-hR-Lkh">
+                        <rect key="frame" x="16" y="27.5" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="GOC-C0-vkX"/>
+                            <constraint firstAttribute="height" constant="50" id="LCg-J3-VuF"/>
+                            <constraint firstAttribute="width" secondItem="WJE-hR-Lkh" secondAttribute="height" multiplier="1:1" id="WWt-yl-U85"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="A0f-0H-rmP" firstAttribute="top" secondItem="80U-Un-b5d" secondAttribute="bottom" constant="8" id="0I1-vv-otr"/>
+                    <constraint firstItem="Pjl-S8-Dta" firstAttribute="leading" secondItem="WJE-hR-Lkh" secondAttribute="trailing" id="5hj-Vb-9JQ"/>
+                    <constraint firstItem="WJE-hR-Lkh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="RAA-mA-iKX"/>
+                    <constraint firstItem="80U-Un-b5d" firstAttribute="top" secondItem="Pjl-S8-Dta" secondAttribute="bottom" constant="4" id="Rc5-rd-sEp"/>
+                    <constraint firstItem="Pjl-S8-Dta" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Wsx-eW-5n1"/>
+                    <constraint firstItem="WJE-hR-Lkh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Xej-R3-q3t"/>
+                    <constraint firstItem="80U-Un-b5d" firstAttribute="leading" secondItem="WJE-hR-Lkh" secondAttribute="trailing" constant="8" id="bIa-GU-ugp"/>
+                    <constraint firstItem="fUl-2m-f9X" firstAttribute="leading" secondItem="80U-Un-b5d" secondAttribute="trailing" constant="8" id="dwE-KQ-Rac"/>
+                    <constraint firstAttribute="trailing" secondItem="Pjl-S8-Dta" secondAttribute="trailing" id="gcN-43-zFa"/>
+                    <constraint firstItem="5q9-Ri-6lm" firstAttribute="centerY" secondItem="A0f-0H-rmP" secondAttribute="centerY" id="hlR-kY-ogB"/>
+                    <constraint firstItem="fUl-2m-f9X" firstAttribute="centerY" secondItem="80U-Un-b5d" secondAttribute="centerY" id="nJa-cn-Zj4"/>
+                    <constraint firstAttribute="trailing" secondItem="fUl-2m-f9X" secondAttribute="trailing" id="p3s-Y3-Q8U"/>
+                    <constraint firstItem="A0f-0H-rmP" firstAttribute="leading" secondItem="80U-Un-b5d" secondAttribute="leading" id="u3R-uB-Bge"/>
+                    <constraint firstItem="5q9-Ri-6lm" firstAttribute="leading" secondItem="A0f-0H-rmP" secondAttribute="trailing" constant="11" id="xKk-vZ-StM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="RestaurantCuisineLabel" destination="fUl-2m-f9X" id="UPA-nZ-7I8"/>
+                <outlet property="RestaurantLogoImageView" destination="WJE-hR-Lkh" id="2uE-CP-fh7"/>
+                <outlet property="RestaurantRatingLabel" destination="5q9-Ri-6lm" id="Bke-Bn-QNn"/>
+                <outlet property="RestaurantTitleLabel" destination="Pjl-S8-Dta" id="8in-WV-ITo"/>
+            </connections>
+            <point key="canvasLocation" x="163.768115942029" y="170.42410714285714"/>
+        </tableViewCell>
+    </objects>
+</document>
