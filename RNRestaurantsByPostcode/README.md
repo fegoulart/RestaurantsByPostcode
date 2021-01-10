@@ -2,8 +2,6 @@
 
 This is a React Native app to fetch all restaurants by UK postcode
 
-## Missing aspects
-
 ## External libraries used
 
 * Axios
