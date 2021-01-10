@@ -16,13 +16,17 @@ class RestaurantsTableViewCell: UITableViewCell {
     @IBOutlet weak var restaurantTitleLabel: UILabel!
     @IBOutlet weak var restaurantRatingLabel: UILabel!
     @IBOutlet weak var restaurantCuisineLabel: UILabel!
+    @IBOutlet weak var cellContentView: UIView!
     
     // MARK: Variables
     
     var restaurant: Restaurant?
+    weak var cellDelegate: RestaurantCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        //let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.onCellTap))
+        //self.cellContentView.addGestureRecognizer(gesture)
     }
     
     func update(item: RestaurantsListing.DisplayedRestaurants) {
@@ -50,4 +54,10 @@ class RestaurantsTableViewCell: UITableViewCell {
         return !(item.restaurant.isOpenNow ?? false) && !(item.restaurant.isOpenNowForDelivery ?? false)
     }
     
+//    @objc private func onCellTap() {
+//        self.cellDelegate?.cellTapped(cell: self)
+//    }
+    
 }
+
+

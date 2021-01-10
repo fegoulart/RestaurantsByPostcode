@@ -75,6 +75,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="cellContentView" destination="H2p-sc-9uM" id="tso-Xa-MkG"/>
                 <outlet property="restaurantCuisineLabel" destination="fUl-2m-f9X" id="UPA-nZ-7I8"/>
                 <outlet property="restaurantLogoImageView" destination="WJE-hR-Lkh" id="2uE-CP-fh7"/>
                 <outlet property="restaurantRatingLabel" destination="5q9-Ri-6lm" id="Bke-Bn-QNn"/>
