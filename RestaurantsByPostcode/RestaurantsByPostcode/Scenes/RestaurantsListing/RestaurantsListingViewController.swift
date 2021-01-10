@@ -12,7 +12,13 @@ protocol RestaurantsListingDisplayLogic: AnyObject {
     func displayRestaurantsByPostcode(viewModel: RestaurantsListing.FetchRestaurantsByPostcode.ViewModel)
 }
 
-final class RestaurantsListingViewController: UIViewController, RestaurantsListingDisplayLogic {
+protocol RestaurantCellDelegate: AnyObject {
+    func cellTapped(cell: RestaurantsTableViewCell)
+}
+
+final class RestaurantsListingViewController: UIViewController, RestaurantsListingDisplayLogic, RestaurantCellDelegate {
+  
+    
 
     var interactor: RestaurantsListingBusinessLogic?
     
@@ -27,6 +33,7 @@ final class RestaurantsListingViewController: UIViewController, RestaurantsListi
     // MARK: Variables
     
     var displayedRestaurants: [RestaurantsListing.DisplayedRestaurants] = []
+    var chosenRestaurant: Restaurant?
     
     // MARK: Object lifecyle
     
@@ -56,6 +63,9 @@ final class RestaurantsListingViewController: UIViewController, RestaurantsListi
     
     }
     
+    @IBAction func unwindToRootViewController(segue: UIStoryboardSegue) {
+        print("Unwind to Root View Controller")
+    }
 }
 
 extension RestaurantsListingViewController {
@@ -95,6 +105,17 @@ extension RestaurantsListingViewController: UITableViewDelegate, UITableViewData
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenRestaurant = self.displayedRestaurants[indexPath.row].restaurant
+        performSegue(withIdentifier: "restaurantDetailSegue", sender: self)
+    }
+ 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! RestaurantDetailViewController
+        destinationVC.restaurant = chosenRestaurant
+    }
+    
+    
 }
 
 // MARK: Setup
@@ -123,7 +144,15 @@ private extension RestaurantsListingViewController {
     
 }
 
-// MARK: Actions
+// MARK: Restaurante TableView Cell Delegate
+
+extension RestaurantsListingViewController {
+    func cellTapped(cell: RestaurantsTableViewCell) {
+        
+        //performSegue(withIdentifier: "restaurantDetailSegue", sender: self)
+        
+      }
+}
 
 
 
