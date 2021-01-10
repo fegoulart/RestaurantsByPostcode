@@ -1,32 +1,37 @@
-import React, {useEffect, useState} from 'react';
-import {View, Text, FlatList, Button, StyleSheet, ScrollView} from 'react-native';
-import {TextInput} from "react-native-web";
+import React from 'react';
+import {View, StyleSheet, Keyboard } from 'react-native';
 import {SearchButton} from '../../atoms/SearchButton';
 import {SearchText} from '../../atoms/SearchText';
 import {fetchRestaurantsByPostcode} from "../../../api";
-import {set} from "react-native-reanimated";
 
 export const SearchBar = props => {
 
-    const { setRestaurants } = props;
+    const { onSearchedHandler } = props;
+
     const [enteredPostcode, setEnteredPostcode] = React.useState('')
     const postcodeInputHandler = enteredPostcode => {
         setEnteredPostcode(enteredPostcode)
     };
 
     const fetchRestaurants = postcode => {
-        fetchRestaurantsByPostcode(postcode).then( restaurants  => {
-            setRestaurants(restaurants)
-        }, (err) => {
+        try {
+            fetchRestaurantsByPostcode(postcode).then(restaurants => {
+                onSearchedHandler(restaurants)
+            }, (err) => {
+                console.log(`error: ${err}`)
+            })
+        } catch(err) {
             console.log(`error: ${err}`)
-        })
+        }
     };
 
     return (
         <View style={styles.searchBar}>
             <SearchText placeholder="postcode" onChangeText={postcodeInputHandler} enteredText={enteredPostcode}/>
             <SearchButton title="Search" hint="Tap search restaurants in entered postcode" onPress={() => {
+                Keyboard.dismiss()
                 fetchRestaurants(enteredPostcode)
+
             }}/>
         </View>
         )
@@ -42,12 +47,9 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         textAlign: 'center',
         width: '100%',
-        padding: 20,
-        marginTop: 10,
         borderColor: 'gray',
         borderBottomWidth: 1,
         flexDirection: 'row',
-        height: 100,
         backgroundColor: 'red'
     }
 });

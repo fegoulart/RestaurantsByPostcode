@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from 'react';
-import {View, Text, FlatList, Button, StyleSheet, ScrollView, TouchableHighlight} from 'react-native';
-import {TextInput} from "react-native-web";
+import React from 'react';
+import {Text, StyleSheet, TouchableHighlight} from 'react-native';
+import {TouchableOpacity} from "react-native-web";
 
 export const SearchButton = props => {
-    const { onPress, title, hint } = props
+    const { onPress, title, hint, testId, textColor } = props
     return (
-        <TouchableHighlight style={styles.searchButton}  title={props.title} onPress={onPress} accessible={true} accessibilityLabel={props.title} accessibilityHint={props.hint} accessibilityRole="button">
-        <Text>{props.title}</Text>
+        <TouchableHighlight style={styles.searchButton} onPress={onPress} accessible={true} accessibilityLabel={props.title} accessibilityHint={props.hint} accessibilityRole="button" >
+        <Text style={{color: textColor ? textColor : 'white'}}  testID={testId}>{props.title}</Text>
         </TouchableHighlight>
     )
 };
@@ -22,8 +22,5 @@ const styles = StyleSheet.create({
         padding: 20,
         marginTop: 10,
         color: 'blue'
-    },
-    searchButtonText: {
-
     }
 });

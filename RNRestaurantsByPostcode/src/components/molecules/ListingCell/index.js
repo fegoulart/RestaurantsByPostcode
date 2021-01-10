@@ -1,36 +1,54 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, FlatList, Button, StyleSheet, ScrollView} from 'react-native';
-import {TextInput} from "react-native-web";
-import {SearchButton} from '../../atoms/SearchButton';
-import {SearchText} from '../../atoms/SearchText';
-import {fetchRestaurantsByPostcode} from "../../../api";
-import {set} from "react-native-reanimated";
-
+import {StyleSheet, View} from 'react-native';
+import {CellInformation} from "../CellInformation";
+import {LogoImage} from '../../atoms/LogoImage';
+import Restaurant from '../../../models/Restaurant'
 
 export const ListingCell = props => {
-    const { title, rating, imageUrl, cuisines, isOpen, isOpenForDelivery } = props
+    const {restaurant} = props;
+    const emptyRestaurant = new Restaurant('', '', '', '', '', '', '', '', '', '', '');
+    const [serverRestaurant, setServerRestaurant] = useState(emptyRestaurant);
+    const [serverLogoUrl, setServerLogoUrl] = useState('');
 
+    useEffect(() => {
+        setServerRestaurant(restaurant);
+        setServerLogoUrl(restaurant.logoUrl);
+    });
+
+    // TODO: mantain all logos with same start margin
+    // TODO: resolve cuisine long text design issue
     return (
-        <View>
-            <View styles={{flexDirection: 'row'}}>
-                <Ima
 
-            </View>
+        <View style={styles.cell}>
+            <LogoImage style={styles.logo} imageUrl={serverLogoUrl}/>
+            <CellInformation style={styles.infos} title={serverRestaurant.name}
+                             rating={serverRestaurant.ratingStars}
+                             cuisines={serverRestaurant.cuisines}/>
         </View>
+
+
     )
 };
 
+
 const styles = StyleSheet.create({
-    listingCell: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 16,
-        fontWeight: "bold",
-        textAlign: 'center',
-        width:'100%',
-        padding: 20,
-        marginTop: 0,
+    cell: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'stretch',
+        width: '100%',
+        height: 100,
         borderColor: 'gray',
-        borderBottomWidth: 1
+        borderBottomWidth: 1,
+        padding: 20,
+    },
+    logo: {
+        alignSelf: 'flex-start',
+    },
+    infos: {
+        alignSelf: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'blue'
     }
 });
+
