@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		565E0D3025B1CA4B00F087B0 /* RestaurantsListingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEEC8DC25ABA137009894FC /* RestaurantsListingViewControllerTests.swift */; };
+		565E0D5125B1D26E00F087B0 /* JSONMockingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E0D5025B1D26E00F087B0 /* JSONMockingTool.swift */; };
+		565E0D5325B1D2D700F087B0 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565E0D5225B1D2D700F087B0 /* Optional+Extensions.swift */; };
 		6C08B47D25A7EA460021A6C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C08B47C25A7EA460021A6C0 /* AppDelegate.swift */; };
 		6C08B48425A7EA460021A6C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C08B48225A7EA460021A6C0 /* Main.storyboard */; };
 		6C08B48625A7EA480021A6C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C08B48525A7EA480021A6C0 /* Assets.xcassets */; };
@@ -32,7 +35,6 @@
 		6C43E39225A7FA8300BF1D42 /* Restaurants.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C43E39125A7FA8300BF1D42 /* Restaurants.json */; };
 		6CEEC8CE25AB9065009894FC /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEEC8CD25AB9064009894FC /* RestaurantDetailViewController.swift */; };
 		6CEEC8D225AB9E49009894FC /* RestaurantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEEC8D125AB9E49009894FC /* RestaurantTests.swift */; };
-		6CEEC8DD25ABA137009894FC /* RestaurantsListingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEEC8DC25ABA137009894FC /* RestaurantsListingViewControllerTests.swift */; };
 		6CEEC8DE25ABA41B009894FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C08B48225A7EA460021A6C0 /* Main.storyboard */; };
 		6CEEC8E025ABA4EA009894FC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEEC8DF25ABA4EA009894FC /* String+Extensions.swift */; };
 		A72619102FA5035A5C4A0A6F /* libPods-RestaurantsByPostcodeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 472B46CFF5EB3DBA359D2CFE /* libPods-RestaurantsByPostcodeUITests.a */; };
@@ -62,6 +64,8 @@
 		40C28D2A2C0A4574AC244A30 /* Pods-RestaurantsByPostcodeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestaurantsByPostcodeUITests.release.xcconfig"; path = "Target Support Files/Pods-RestaurantsByPostcodeUITests/Pods-RestaurantsByPostcodeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		472B46CFF5EB3DBA359D2CFE /* libPods-RestaurantsByPostcodeUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RestaurantsByPostcodeUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		483958695E4C1E63ED89CFF8 /* Pods_RestaurantsByPostcode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RestaurantsByPostcode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		565E0D5025B1D26E00F087B0 /* JSONMockingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JSONMockingTool.swift; path = ../../../../../marvelCharactersApp/JSONMockingTool.swift; sourceTree = "<group>"; };
+		565E0D5225B1D2D700F087B0 /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
 		6566CEC7D9206BEAFDB7AAEA /* Pods-RestaurantsByPostcodeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestaurantsByPostcodeTests.release.xcconfig"; path = "Target Support Files/Pods-RestaurantsByPostcodeTests/Pods-RestaurantsByPostcodeTests.release.xcconfig"; sourceTree = "<group>"; };
 		6C08B47925A7EA460021A6C0 /* RestaurantsByPostcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantsByPostcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C08B47C25A7EA460021A6C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -235,6 +239,7 @@
 				6C08B4BD25A7EE6C0021A6C0 /* Formatter+Utils.swift */,
 				6C1FA64E25A897AC00B27938 /* UIImageView+Extensions.swift */,
 				6CEEC8DF25ABA4EA009894FC /* String+Extensions.swift */,
+				565E0D5225B1D2D700F087B0 /* Optional+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 		6CEEC8D825ABA0C4009894FC /* TestTools */ = {
 			isa = PBXGroup;
 			children = (
+				565E0D5025B1D26E00F087B0 /* JSONMockingTool.swift */,
 			);
 			path = TestTools;
 			sourceTree = "<group>";
@@ -645,6 +651,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C08B4C225A7F2D90021A6C0 /* RestaurantsTableViewCell.swift in Sources */,
+				565E0D5325B1D2D700F087B0 /* Optional+Extensions.swift in Sources */,
 				6C08B4BA25A7EE200021A6C0 /* Moya+Extension.swift in Sources */,
 				6C08B4BE25A7EE6C0021A6C0 /* Formatter+Utils.swift in Sources */,
 				6C1FA64025A80A0900B27938 /* RestaurantErrors.swift in Sources */,
@@ -670,8 +677,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CEEC8DD25ABA137009894FC /* RestaurantsListingViewControllerTests.swift in Sources */,
+				565E0D3025B1CA4B00F087B0 /* RestaurantsListingViewControllerTests.swift in Sources */,
 				6CEEC8D225AB9E49009894FC /* RestaurantTests.swift in Sources */,
+				565E0D5125B1D26E00F087B0 /* JSONMockingTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -838,14 +846,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q2G3885B87;
+				DEVELOPMENT_TEAM = 64XJHK2QX2;
 				INFOPLIST_FILE = RestaurantsByPostcode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.leapi.RestaurantsByPostcode;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leapi.RestaurantsByPostcodeChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -858,14 +866,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q2G3885B87;
+				DEVELOPMENT_TEAM = 64XJHK2QX2;
 				INFOPLIST_FILE = RestaurantsByPostcode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.leapi.RestaurantsByPostcode;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leapi.RestaurantsByPostcodeChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
