@@ -1,10 +1,11 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, Modal, StyleSheet, Text, TouchableHighlight} from 'react-native';
 import {Header} from '../../organisms/Header'
 import {SearchBar} from '../../molecules/SearchBar'
 import {Listing} from "../../organisms/Listing";
 import {AdditionalInformation} from "../../molecules/AdditionalInformation";
 import Restaurant from "../../../models/Restaurant";
+import {fetchRestaurantsByPostcode} from "../../../api";
 
 export const RestaurantsListing = () => {
 
@@ -12,14 +13,49 @@ export const RestaurantsListing = () => {
     const [restaurants, setRestaurants] = React.useState([]);
     const [detailModalVisible, setDetailModalVisible] = useState(false);
     const [chosenRestaurant, setChosenRestaurant] = useState(emptyRestaurant);
+    const [chosenPostcode, setChosenPostcode] = useState('');
+    const [currentPage, setCurrentPage] = useState(0);
+    const [listingEndReached, setListingEndReached] = useState(false)
 
-    useEffect(()=> {
+    useEffect(() => {
+        if (chosenPostcode !== '') {
+            try {
+                setCurrentPage(0)
+                fetchRestaurantsByPostcode(chosenPostcode, currentPage).then(newRestaurants => {
+                    setRestaurants(newRestaurants)
+                }, (err) => {
+                    console.log(`error: ${err}`)
+                })
+            } catch (err) {
+                console.log(`error: ${err}`)
+            }
+        }
+    }, [chosenPostcode]);
+
+    useEffect(() => {
         if (chosenRestaurant.name !== '') {
             setDetailModalVisible(true);
         } else {
             setDetailModalVisible(false)
         }
-    },[chosenRestaurant]);
+    }, [chosenRestaurant]);
+
+    useEffect(() => {
+        if (listingEndReached) {
+            let newCurrentPage = currentPage + 1
+            setCurrentPage(newCurrentPage)
+            try {
+                fetchRestaurantsByPostcode(chosenPostcode, newCurrentPage).then(newRestaurants => {
+                    setRestaurants(newRestaurants)
+                }, (err) => {
+                    console.log(`error: ${err}`)
+                })
+            } catch (err) {
+                console.log(`error: ${err}`)
+            }
+            setListingEndReached(false)
+        }
+    }, [listingEndReached]);
 
     return (
         <View style={styles.screen}>
@@ -33,7 +69,10 @@ export const RestaurantsListing = () => {
             >
                 <View style={styles.centeredView}>
                     <View style={styles.modalView}>
-                        <AdditionalInformation address={chosenRestaurant.address} openingTime={chosenRestaurant.openingTime} deliveryTime={chosenRestaurant.deliveryOpeningTime} deals={chosenRestaurant.deals}/>
+                        <AdditionalInformation address={chosenRestaurant.address}
+                                               openingTime={chosenRestaurant.openingTime}
+                                               deliveryTime={chosenRestaurant.deliveryOpeningTime}
+                                               deals={chosenRestaurant.deals}/>
 
                         <TouchableHighlight
                             style={{...styles.openButton, backgroundColor: "#2196F3"}}
@@ -49,15 +88,17 @@ export const RestaurantsListing = () => {
             </Modal>
 
             <Header title="Restaurants by Postcode"/>
-            <SearchBar onSearchedHandler={setRestaurants}/>
-            <Listing restaurants={restaurants} onCellTap={setChosenRestaurant} />
+            <SearchBar postcodeHandler={setChosenPostcode}/>
+            <Listing restaurants={restaurants}  onEndListHandler={setListingEndReached} onCellTap={setChosenRestaurant} />
         </View>
     )
 };
 
 const styles = StyleSheet.create({
     screen: {
-        width: '100%'
+        width: '100%',
+        height: '100%'
+
     },
     centeredView: {
         flex: 1,
