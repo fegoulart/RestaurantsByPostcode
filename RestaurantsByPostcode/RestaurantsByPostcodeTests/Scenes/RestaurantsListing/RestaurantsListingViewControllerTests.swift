@@ -23,7 +23,7 @@ class RestaurantListingControllerTests: QuickSpec {
             
             func setupRestaurantsListingViewController() {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                sut = storyboard.instiateViewController(withidentifier: "RestaurantsListingViewController") as? RestaurantsListingViewController
+                sut = storyboard.instantiateViewController(withIdentifier: "RestaurantsListingViewController") as? RestaurantsListingViewController
             }
             
             beforeEach {
@@ -47,7 +47,7 @@ class RestaurantListingControllerTests: QuickSpec {
             
             // MARK: Test doubles
             
-            class RestaurantsListingBusinnessLogicSpy: RestaurantsListingBusinnessLogic {
+            class RestaurantsListingBusinessLogicSpy: RestaurantsListingBusinessLogic {
                 
                 var fetchRestaurantsCalled = false
                 
@@ -68,12 +68,13 @@ class RestaurantListingControllerTests: QuickSpec {
             
             context("When search button is pressed on the view controller") {
                 it("Should fetch Restaurants") {
-                    let RestaurantsBusinessLogicSpy = RestaurantsListingBusinessLogicSpy()
-                    sut.interactor = RestaurantsBusinessLogicSpy
+                    let RestaurantsListingBusinessLogicSpy = RestaurantsListingBusinessLogicSpy()
+                    sut.interactor = RestaurantsListingBusinessLogicSpy
 
-                    loadview()
+                    loadView()
 
                     sut.fetchRestaurantsByPostcode(postCode: "EC4M")
+                    
                     expect(RestaurantsListingBusinessLogicSpy.fetchRestaurantsCalled).to(beTrue())
                 }
             }

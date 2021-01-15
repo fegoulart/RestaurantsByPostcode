@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9dr-XK-vtv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9dr-XK-vtv">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Restaurants Listing View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RestaurantsListingViewController" customModule="RestaurantsByPostcode" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RestaurantsListingViewController" id="BYZ-38-t0r" customClass="RestaurantsListingViewController" customModule="RestaurantsByPostcode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nah-hN-oxW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -21,7 +21,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="siH-tU-1o8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="siH-tU-1o8">
                                 <rect key="frame" x="222" y="96" width="48" height="30"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
@@ -30,10 +30,11 @@
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" estimatedRowHeight="105" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nav-LS-nvm">
                                 <rect key="frame" x="0.0" y="178" width="320" height="390"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="1BV-R5-56a"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1BV-R5-56a" firstAttribute="trailing" secondItem="siH-tU-1o8" secondAttribute="trailing" constant="50" id="36V-bt-2oH"/>
                             <constraint firstItem="siH-tU-1o8" firstAttribute="leading" secondItem="VEL-Yd-PBf" secondAttribute="trailing" constant="25" id="87G-2g-JDS"/>
@@ -45,7 +46,6 @@
                             <constraint firstItem="Nav-LS-nvm" firstAttribute="top" secondItem="VEL-Yd-PBf" secondAttribute="bottom" constant="50" id="pwy-59-tYq"/>
                             <constraint firstItem="VEL-Yd-PBf" firstAttribute="leading" secondItem="1BV-R5-56a" secondAttribute="leading" constant="50" id="sa1-4W-I9d"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="1BV-R5-56a"/>
                     </view>
                     <navigationItem key="navigationItem" id="iKg-7U-gW6"/>
                     <connections>
@@ -98,7 +98,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12321 1231 232" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sF8-zr-jWK">
-                                <rect key="frame" x="100" y="151" width="120" height="21"/>
+                                <rect key="frame" x="101" y="151" width="118.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -128,18 +128,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/10 17:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mp2-ym-k7y">
-                                <rect key="frame" x="156" y="202" width="88" height="21"/>
+                                <rect key="frame" x="156" y="202" width="86.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/10 17:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qor-TQ-GSI">
-                                <rect key="frame" x="156" y="252" width="88" height="21"/>
+                                <rect key="frame" x="156" y="252" width="86.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4A-5v-vZP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4A-5v-vZP">
                                 <rect key="frame" x="235" y="35" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
@@ -147,7 +147,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="EDC-9j-OQV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DOL-x1-fCc" firstAttribute="centerX" secondItem="EDC-9j-OQV" secondAttribute="centerX" id="2Ld-81-KUc"/>
                             <constraint firstItem="b4A-5v-vZP" firstAttribute="leading" secondItem="EDC-9j-OQV" secondAttribute="leading" constant="235" id="2aH-3a-AqU"/>
@@ -171,7 +172,6 @@
                             <constraint firstItem="uKd-Yg-SdL" firstAttribute="centerX" secondItem="EDC-9j-OQV" secondAttribute="centerX" id="wNl-n6-9Et"/>
                             <constraint firstItem="3w5-ay-2Lg" firstAttribute="leading" secondItem="7iM-7m-ED7" secondAttribute="leading" id="yy6-Hg-GQj"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="EDC-9j-OQV"/>
                     </view>
                     <connections>
                         <outlet property="addressCityLabel" destination="DOL-x1-fCc" id="IYP-iH-2WU"/>
@@ -188,4 +188,9 @@
             <point key="canvasLocation" x="1929.375" y="120.4225352112676"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
