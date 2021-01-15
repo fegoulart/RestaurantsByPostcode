@@ -2,27 +2,15 @@ import React from 'react';
 import {View, StyleSheet, Keyboard } from 'react-native';
 import {SearchButton} from '../../atoms/SearchButton';
 import {SearchText} from '../../atoms/SearchText';
-import {fetchRestaurantsByPostcode} from "../../../api";
 
 export const SearchBar = props => {
 
-    const { onSearchedHandler } = props;
+    const { postcodeHandler } = props;
 
     const [enteredPostcode, setEnteredPostcode] = React.useState('')
-    const postcodeInputHandler = enteredPostcode => {
-        setEnteredPostcode(enteredPostcode)
-    };
 
-    const fetchRestaurants = postcode => {
-        try {
-            fetchRestaurantsByPostcode(postcode).then(restaurants => {
-                onSearchedHandler(restaurants)
-            }, (err) => {
-                console.log(`error: ${err}`)
-            })
-        } catch(err) {
-            console.log(`error: ${err}`)
-        }
+    const postcodeInputHandler = postcode => {
+        setEnteredPostcode(postcode)
     };
 
     return (
@@ -30,10 +18,11 @@ export const SearchBar = props => {
             <SearchText placeholder="postcode" onChangeText={postcodeInputHandler} enteredText={enteredPostcode}/>
             <SearchButton title="Search" hint="Tap search restaurants in entered postcode" onPress={() => {
                 Keyboard.dismiss()
-                fetchRestaurants(enteredPostcode)
+                postcodeHandler(enteredPostcode)
 
             }}/>
         </View>
+
         )
 };
 

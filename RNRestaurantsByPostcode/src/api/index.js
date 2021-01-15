@@ -1,22 +1,24 @@
 import axios from './axios'
 import Restaurant from "../models/Restaurant";
 
-export async function fetchRestaurantsByPostcode(postcode) {
+export const LIMIT = 20;
+
+export async function fetchRestaurantsByPostcode(postcode, page) {
     let data;
     try {
         data = await axios.get(`https://uk.api.just-eat.io/restaurants/bypostcode/${postcode}`)
-        return parseRestaurantsData(data.data)
+        return parseRestaurantsData(data.data, page)
     } catch (err) {
         console.debug(err.message())
         return []
     }
 }
 
-export const parseRestaurantsData = data => {
+export const parseRestaurantsData = (data, page) => {
     let restaurants = data.Restaurants
 
     let newRestaurants = [];
-    for (let i = 0; i < restaurants.length; i++) {
+    for (let i = LIMIT * page; i < restaurants.length && i < (LIMIT * page) + LIMIT; i++) {
         let item = restaurants[i];
 
         let newRestaurant = new Restaurant(
